@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليلك الشامل لكرة القدم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top for scrollability */
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .book-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Rounded corners */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .cover-page {
+            background-image: url('https://placehold.co/900x500/1a4d2e/ffffff?text=دليلك+الشامل%0Aلإحتراف+كرة+القدم%0A%0Aمن+أساسيات+للعب+إلى+احتراف+المراكز%0Aنصائح+وجداول+تدريبية+لكل+مركز%0A%0AALREFAI');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 1.5rem 1.5rem 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cover-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .cover-content {
+            position: relative;
+            z-index: 2;
+        }
+        .cover-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .cover-subtitle {
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+        .cover-author {
+            font-size: 1.25rem;
+            font-weight: 600;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .book-content {
+            padding: 2.5rem;
+            color: #333;
+            line-height: 1.8;
+        }
+        .book-content h1, .book-content h2, .book-content h3, .book-content h4 {
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        .book-content h1 { font-size: 2.5rem; color: #2c3e50; }
+        .book-content h2 { font-size: 2rem; color: #34495e; border-bottom: 2px solid #e0e0e0; padding-bottom: 0.5rem; }
+        .book-content h3 { font-size: 1.75rem; color: #34495e; }
+        .book-content h4 { font-size: 1.5rem; color: #34495e; }
+        .book-content p {
+            margin-bottom: 1rem;
+        }
+        .book-content ul, .book-content ol {
+            margin-bottom: 1rem;
+            padding-right: 1.5rem;
+            list-style-position: outside;
+        }
+        .book-content ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+        .book-content ol li {
+            margin-bottom: 0.5rem;
+        }
+        .book-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+        .book-content th, .book-content td {
+            border: 1px solid #e0e0e0;
+            padding: 0.75rem 1rem;
+            text-align: right;
+        }
+        .book-content th {
+            background-color: #f8f8f8;
+            font-weight: 600;
+            color: #555;
+        }
+        .book-content tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+        .book-content .tiktok-link {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem 1rem;
+            background-color: #222222;
+            color: white;
+            border-radius: 0.5rem;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .book-content .tiktok-link:hover {
+            background-color: #000000;
+        }
+        .llm-feature-section {
+            background-color: #f9f9f9;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 3rem;
+            border: 1px solid #e0e0e0;
+        }
+        .llm-feature-section h3 {
+            color: #4CAF50;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .llm-feature-section textarea, .llm-feature-section input[type="text"], .llm-feature-section select {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            resize: vertical;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .llm-feature-section input[type="text"], .llm-feature-section select {
+            min-height: unset; 
+            height: auto; 
+        }
+         .llm-feature-section select {
+            padding: 0.75rem; /* Slightly less padding for select */
+        }
+        .llm-feature-section button {
+            background-color: #2196F3;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 0.5rem; /* Added margin for spacing */
+        }
+        .llm-feature-section button:hover {
+            background-color: #1976D2;
+        }
+        .llm-feature-section button:disabled {
+            background-color: #a0cff8;
+            cursor: not-allowed;
+        }
+        .llm-response {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background-color: #e8f5e9;
+            border-radius: 0.75rem;
+            border: 1px solid #c8e6c9;
+            white-space: pre-wrap; 
+            font-size: 1rem;
+            color: #333;
+        }
+        .translated-response {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #e3f2fd; /* Light blue for translated text */
+            border-radius: 0.75rem;
+            border: 1px solid #bbdefb;
+            white-space: pre-wrap;
+            font-size: 0.95rem;
+            color: #222;
+        }
+        .loading-indicator {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #555;
+        }
+        .translate-button {
+            background-color: #ff9800 !important; /* Orange for translate button */
+            color: white !important;
+            margin-top: 1rem !important;
+            width: auto !important; /* Allow button to size to content */
+            padding: 0.5rem 1rem !important;
+            font-size: 0.9rem !important;
+        }
+        .translate-button:hover {
+            background-color: #f57c00 !important;
+        }
+        .global-language-switcher {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: #e0f2f7;
+            border-radius: 0.75rem;
+            border: 1px solid #b3e5fc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .global-language-switcher button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .global-language-switcher button:hover {
+            background-color: #388E3C;
+        }
+        .language-display {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .cover-title {
+                font-size: 2.5rem;
+            }
+            .cover-subtitle {
+                font-size: 1.25rem;
+            }
+            .book-content {
+                padding: 1.5rem;
+            }
+            .book-content h1 { font-size: 2rem; }
+            .book-content h2 { font-size: 1.75rem; }
+            .book-content h3 { font-size: 1.5rem; }
+            .book-content h4 { font-size: 1.25rem; }
+            .global-language-switcher {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <section class="cover-page">
+            <div class="cover-content">
+                <h1 class="cover-title">دليلك الشامل لإحتراف كرة القدم</h1>
+                <p class="cover-subtitle">من أساسيات للعب إلى احتراف المراكز نصائح وجداول تدربيية لكل مركز</p>
+                <p class="cover-author mt-8">ALREFAI</p>
+            </div>
+        </section>
+
+        <div class="book-content">
+            <div class="global-language-switcher">
+                <button id="toggle-book-language-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 00-.707 1.707l3 3a1 1 0 001.414 0l3-3A1 1 0 0013 9H7z" clip-rule="evenodd" />
+                    </svg>
+                    <span id="current-language-text">تبديل إلى الإنجليزية</span>
+                </button>
+            </div>
+
+            <div id="arabic-book-content">
+                <h1>فهرس الكتاب:</h1>
+                <ol>
+                    <li><a href="#section1" class="text-blue-600 hover:underline">أساسيات كرة القدم للجميع</a></li>
+                    <li><a href="#section2" class="text-blue-600 hover:underline">التدريبات التخصصية حسب المراكز</a>
+                        <ul class="pr-4 mt-2">
+                            <li><a href="#goalkeepers" class="text-blue-600 hover:underline">قسم حراس المرمى</a></li>
+                            <li><a href="#centerbacks" class="text-blue-600 hover:underline">قسم المدافعين (قلب الدفاع)</a></li>
+                            <li><a href="#fullbacks" class="text-blue-600 hover:underline">قسم الأظهرة (الظهير الأيمن والأيسر)</a></li>
+                            <li><a href="#midfielders" class="text-blue-600 hover:underline">قسم لاعبي الوسط</a></li>
+                            <li><a href="#wingers" class="text-blue-600 hover:underline">قسم الأجنحة (الجناح الأيمن والأيسر)</a></li>
+                            <li><a href="#playmakers" class="text-blue-600 hover:underline">قسم صناع اللعب (لاعب الوسط المهاجم)</a></li>
+                            <li><a href="#strikers" class="text-blue-600 hover:underline">قسم المهاجمين الصريحين (رأس الحربة)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#section3" class="text-blue-600 hover:underline">نصائح عامة وتكتيكات اللعب</a></li>
+                    <li><a href="#llm-features" class="text-blue-600 hover:underline">ميزات الذكاء الاصطناعي ✨</a></li>
+                    <li><a href="#section4" class="text-blue-600 hover:underline">خاتمة</a></li>
+                </ol>
+
+                <h2 id="section1">1. أساسيات كرة القدم للجميع:</h2>
+                <p>قبل الغوص في تفاصيل كل مركز، من الضروري أن يمتلك كل لاعب أساساً قوياً من اللياقة البدنية والفهم العام للعبة.</p>
+
+                <h3>الإحماء وأهميته:</h3>
+                <p><strong>لماذا؟</strong> تهيئة العضلات والمفاصل للمجهود البدني، زيادة تدفق الدم، تقليل خطر الإصابات، تحسين التركيز الذهني.</p>
+                <p><strong>كيف؟</strong> يبدأ بتمارين هوائية خفيفة (ركض خفيف، قفز الحبل)، ثم تمارين إطالة ديناميكية (تحريك المفاصل في مدى حركتها الكامل)، وأخيراً تمارين خاصة بالكرة (تمريرات قصيرة، تحكم بالكرة).</p>
+                <p><strong>المدة:</strong> 15-20 دقيقة.</p>
+                <a href="https://www.tiktok.com/@koracoach/video/7352119484603256072" target="_blank" class="tiktok-link">شاهد تمارين إحماء كرة قدم على TikTok</a>
+
+                <h3>تمارين اللياقة البدنية العامة:</h3>
+                <ul>
+                    <li><strong>السرعة:</strong> تمارين الركض السريع (Sprints) لمسافات قصيرة (20-40 متر)، تمارين الرشاقة (Agility ladder, Cones drills).</li>
+                    <li><strong>القوة:</strong> تمارين وزن الجسم (ضغط، عقلة، قرفصاء)، تمارين الأثقال (تحت إشراف مدرب).</li>
+                    <li><strong>التحمل:</strong> الركض لمسافات طويلة بوتيرة معتدلة، تمارين المراحل (Interval training).</li>
+                    <li><strong>المرونة:</strong> تمارين الإطالة الثابتة بعد التدريب ( удерживание растяжки 20-30 ثانية).</li>
+                </ul>
+                <a href="https://www.tiktok.com/@adam.fit5/video/7266788165443276034" target="_blank" class="tiktok-link">شاهد تمارين لياقة بدنية لكرة القدم على TikTok</a>
+
+                <h3>التغذية السليمة للاعب كرة القدم:</h3>
+                <ul>
+                    <li><strong>الكربوهيدرات المعقدة:</strong> المصدر الرئيسي للطاقة (خبز أسمر، أرز بني، معكرونة، بطاطا).</li>
+                    <li><strong>البروتينات:</strong> لبناء وإصلاح العضلات (دجاج، سمك، لحم أحمر قليل الدهن، بيض، بقوليات).</li>
+                    <li><strong>الدهون الصحية:</strong> للطاقة ووظائف الجسم (أفوكادو، مكسرات، زيت زيتون).</li>
+                    <li><strong>الفيتامينات والمعادن:</strong> من الخضروات والفواكه الطازجة.</li>
+                    <li><strong>الترطيب:</strong> شرب كميات كافية من الماء قبل، أثناء، وبعد التدريب والمباريات.</li>
+                </ul>
+                <a href="https://www.tiktok.com/@odeyamiin/video/7230547349188267270" target="_blank" class="tiktok-link">شاهد نصائح تغذية لاعبي كرة القدم على TikTok</a>
+
+                <h3>أهمية الراحة والاستشفاء:</h3>
+                <ul>
+                    <li>النوم الكافي (7-9 ساعات) للسماح للجسم بإعادة البناء والإصلاح.</li>
+                    <li>أيام راحة نشطة (تمارين خفيفة جداً أو إطالات) لتجنب الإفراط في التدريب.</li>
+                    <li>تقنيات الاستشفاء مثل حمامات الثلج أو التدليك (إذا أمكن).</li>
+                </ul>
+
+                <h3>الجانب الذهني في كرة القدم:</h3>
+                <ul>
+                    <li><strong>التركيز:</strong> القدرة على الحفاظ على الانتباه طوال المباراة.</li>
+                    <li><strong>الثقة بالنفس:</strong> الإيمان بقدراتك.</li>
+                    <li><strong>التعامل مع الضغوط:</strong> الحفاظ على الهدوء واتخاذ القرارات الصحيحة تحت الضغط.</li>
+                    <li><strong>التصور الذهني:</strong> تخيل نفسك تنجح في تنفيذ المهارات واتخاذ القرارات.</li>
+                </ul>
+                <a href="https://www.tiktok.com/@safrahft/video/7381922002719870215" target="_blank" class="tiktok-link">شاهد أسرار زيادة التركيز في مباريات كرة القدم على TikTok</a>
+
+                <h2 id="section2">2. التدريبات التخصصية حسب المراكز:</h2>
+                <h3 id="goalkeepers">أ. قسم حراس المرمى (Goalkeepers):</h3>
+                <p><strong>المهام الرئيسية:</strong> منع الأهداف، تنظيم الدفاع، بدء الهجمات.</p>
+                <p><strong>النصائح الأساسية:</strong></p>
+                <ul>
+                    <li>**الشجاعة والقيادة:** كن واثقاً وقائداً في منطقة الجزاء.</li>
+                    <li>**ردود الفعل السريعة:** تدرب على سرعة الاستجابة للكرات غير المتوقعة.</li>
+                    <li>**التمركز الصحيح:** تعلم كيفية تغطية الزوايا والوقوف في المكان المناسب.</li>
+                    <li>**الإمساك بالكرة (Handling):** تدرب على الإمساك بالكرات المختلفة (الأرضية، العالية، القوية).</li>
+                    <li>**التوزيع (Distribution):** إتقان رمي الكرة باليد وركلها بدقة لبدء الهجمات.</li>
+                    <li>**التواصل:** وجه المدافعين باستمرار.</li>
+                </ul>
+                <a href="https://www.tiktok.com/@eplworld/video/7349857739687939329" target="_blank" class="tiktok-link">شاهد تمارين حراس المرمى على TikTok</a>
+
+                <h4>جدول تدريبي مقترح (3 أيام في الأسبوع بالإضافة لتدريبات الفريق):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>التركيز الأساسي</th>
+                            <th>تمارين مقترحة</th>
+                            <th>المدة (تقريبية)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**الإمساك وردود الفعل**</td>
+                            <td>تمارين إمساك كرات قريبة بأنواعها (من المدرب أو الحائط)، تمارين رد فعل على تسديدات مفاجئة من مسافات مختلفة، تمارين القفز والإمساك بالكرات العالية.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**التمركز والتوزيع**</td>
+                            <td>تمارين التحرك على خط المرمى لتغطية الزوايا، تمارين الخروج للكرات العرضية، تمارين رمي الكرة باليد لمسافات وأهداف مختلفة، تمارين ركل الكرة من الأرض ومن اليد (دقة وقوة).</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**مواقف اللعب والرشاقة**</td>
+                            <td>تمارين محاكاة مواقف 1 ضد 1، تمارين التعامل مع الكرات المرتدة، تمارين رشاقة خاصة بحراس المرمى (حواجز منخفضة، أقماع)، تمارين القوة الانفجارية للأرجل.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="centerbacks">ب. قسم المدافعين (قلب الدفاع - Center Backs):</h3>
+                <p><strong>المهام الرئيسية:</strong> إيقاف مهاجمي الخصم، قطع الكرات، بناء اللعب من الخلف، قيادة خط الدفاع.</p>
+                <p><strong>النصائح الأساسية:</strong></p>
+                <ul>
+                    <li>**القوة البدنية والصلابة في الالتحامات:** كن قوياً في المواجهات الثنائية.</li>
+                    <li>**التمركز الدفاعي الذكي:** توقع حركة المهاجم والكرة.</li>
+                    <li>**القدرة على قراءة اللعب:** اعتراض التمريرات والتمركز بشكل صحيح.</li>
+                    <li>**إتقان التشتيت (Clearance) والتمرير الدقيق:** إبعاد الخطر وبدء الهجمة.</li>
+                    <li>**الضربات الرأسية الدفاعية والهجومية:** إتقان ضرب الكرة بالرأس في كلا الموقفين.</li>
+                    <li>**التواصل مع خط الدفاع وحارس المرمى.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@_brothers_football_/video/7341398644815449349" target="_blank" class="tiktok-link">شاهد تمرين قلب الدفاع على TikTok</a>
+
+                <h4>جدول تدريبي مقترح (3 أيام في الأسبوع بالإضافة لتدريبات الفريق):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>التركيز الأساسي</th>
+                            <th>تمارين مقترحة</th>
+                            <th>المدة (تقريبية)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**الالتحامات والضربات الرأسية**</td>
+                            <td>تمارين 1 ضد 1 دفاعية (محاولة استخلاص الكرة)، تمارين التدخل (Tackling) بأنواعه، تمارين الضربات الرأسية من رميات تماس وركنيات (دفاعية وهجومية)، تمارين القوة البدنية (جزء علوي وسفلي).</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**التمركز وقطع الكرات**</td>
+                            <td>تمارين قراءة اللعب واعتراض التمريرات البينية، تمارين التغطية الدفاعية (Covering)، تمارين التحرك ك وحدة واحدة مع باقي خط الدفاع، تمارين محاكاة مواقف دفاعية مختلفة.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**بناء اللعب والتمرير**</td>
+                            <td>تمارين التمرير الدقيق لمسافات مختلفة (قصير وطويل)، تمارين استلام الكرة تحت الضغط والتخلص منها بشكل صحيح، تمارين تغيير اتجاه اللعب، تمارين الرشاقة والتوازن.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="fullbacks">ج. قسم الأظهرة (الظهير الأيمن والأيسر - Fullbacks):</h3>
+                <p><strong>المهام الرئيسية:</strong> الدفاع على الأطراف، دعم الهجوم وإرسال العرضيات، توفير العرض في الملعب.</p>
+                <p><strong>النصائح الأساسية:</strong></p>
+                <ul>
+                    <li>**السرعة والقدرة على التحمل:** القدرة على الركض صعوداً ونزولاً على طول الخط.</li>
+                    <li>**القدرة على المراوغة والعرضيات الدقيقة:** تجاوز مدافعي الخصم وإرسال كرات خطيرة.</li>
+                    <li>**الوعي الدفاعي والتمركز:** إغلاق المساحات على الأجنحة ومنع الاختراقات.</li>
+                    <li>**التداخل (Overlapping) مع الجناح.**</li>
+                    <li>**التوازن بين المهام الدفاعية والهجومية.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@gemy_masr7/video/7437475542296726802" target="_blank" class="tiktok-link">شاهد فيديو للأظهرة من الناحية الهجومية على TikTok</a>
+
+                <h4>جدول تدريبي مقترح (3 أيام في الأسبوع بالإضافة لتدريبات الفريق):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>التركيز الأساسي</th>
+                            <th>تمارين مقترحة</th>
+                            <th>المدة (تقريبية)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**السرعة والعرضيات**</td>
+                            <td>تمارين الركض السريع مع وبدون كرة، تمارين تغيير الاتجاه بسرعة، تمارين إرسال العرضيات من وضعيات مختلفة (من الحركة والثبات)، تمارين 1 ضد 1 هجومياً ودفاعياً على الطرف.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**التحمل والدفاع**</td>
+                            <td>تمارين الركض المتقطع (Interval running) لمحاكاة متطلبات المباراة، تمارين التمركز الدفاعي على الطرف، تمارين التدخل والانزلاق، تمارين استعادة الكرة والتحول السريع للهجوم.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**المراوغة والتمرير والوعي**</td>
+                            <td>تمارين المراوغة بسرعات مختلفة، تمارين التمرير القصير والطويل على الأطراف، تمارين التداخل مع لاعب آخر، تمارين قراءة اللعب لتحديد متى يتقدم للهجوم ومتى يبقى للدفاع.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="midfielders">د. قسم لاعبي الوسط (المحور الدفاعي ولاعب الوسط المركزي "Box-to-Box"):</h3>
+                <p><strong>المهام الرئيسية:</strong></p>
+                <ul>
+                    <li>**المحور الدفاعي (Defensive Midfielder):** حماية خط الدفاع، استخلاص الكرات، توزيع اللعب ببساطة.</li>
+                    <li>**لاعب الوسط المركزي (Box-to-Box):** الربط بين الدفاع والهجوم، المساهمة دفاعياً وهجومياً، التحرك في جميع أنحاء الملعب.</li>
+                </ul>
+                <p><strong>النصائح الأساسية:</strong></p>
+                <ul>
+                    <li>**القدرة العالية على التحمل والرؤية الشاملة للملعب.**</li>
+                    <li>**إتقان استخلاص الكرة (للمحور) والتدخلات النظيفة.**</li>
+                    <li>**دقة التمرير (قصير وطويل) والقدرة على تغيير إيقاع اللعب.**</li>
+                    <li>**التسديد من مسافات بعيدة (للاعب الوسط المركزي).**</li>
+                    <li>**التحرك الذكي بدون كرة لفتح المساحات أو إغلاقها.**</li>
+                    <li>**القيادة في وسط الملعب.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@eb_football/video/7419015610773900549" target="_blank" class="tiktok-link">شاهد تدريب لاعبي كرة القدم المحترفين (يشمل الوسط) على TikTok</a>
+
+                <h4>جدول تدريبي مقترح (3 أيام في الأسبوع بالإضافة لتدريبات الفريق):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>التركيز الأساسي</th>
+                            <th>تمارين مقترحة</th>
+                            <th>المدة (تقريبية)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**التحمل واستخلاص الكرة (للمحور)**</td>
+                            <td>تمارين الركض لمسافات طويلة، تمارين الضغط واستخلاص الكرة في مساحات ضيقة، تمارين 1 ضد 1 و 2 ضد 2 دفاعياً، تمارين التمرير القصير تحت الضغط.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**التمرير والرؤية (للجميع)**</td>
+                            <td>تمارين التمرير بأنواعه (باطن القدم، خارج القدم، تمريرات طويلة)، تمارين تغيير اتجاه اللعب بتمريرة واحدة، تمارين "روندو" (دائرة التمرير)، تمارين البحث عن المساحات واستلام الكرة.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**الحركة والتسديد (للاعب Box-to-Box)**</td>
+                            <td>تمارين التحرك بدون كرة لاستلام التمريرات، تمارين "Give and Go"، تمارين التسديد من مسافات مختلفة بعد استقبال تمريرة أو مراوغة، تمارين محاكاة التحول من الدفاع للهجوم والعكس، تمارين القوة الانفجارية.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="wingers">هـ. قسم الأجنحة (الجناح الأيمن والأيسر - Wingers):</h3>
+                <p><strong>المهام الرئيسية:</strong> اختراق دفاعات الخصم من الأطراف، إرسال العرضيات، تسجيل الأهداف، خلق الفرص.</p>
+                <p><strong>النصائح الأساسية:</strong></p>
+                <ul>
+                    <li>**السرعة الفائقة والمهارة في المراوغة.**</li>
+                    <li>**القدرة على التسديد الدقيق والقوي بالقدمين.**</li>
+                    <li>**إتقان إرسال العرضيات المتنوعة (أرضية، عالية، مبكرة).**</li>
+                    <li>**الحركة بدون كرة لاختراق دفاع الخصم أو سحب المدافعين.**</li>
+                    <li>**التعاون مع الظهير وصانع الألعاب.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@odeyamiin/video/7403750119964806407" target="_blank" class="tiktok-link">شاهد تمرين باص وتسارع (مفيد للأجنحة) على TikTok</a>
+
+                <h4>جدول تدريبي مقترح (3 أيام في الأسبوع بالإضافة لتدريبات الفريق):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>التركيز الأساسي</th>
+                            <th>تمارين مقترحة</th>
+                            <th>المدة (تقريبية)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**السرعة والمراوغة**</td>
+                            <td>تمارين الركض السريع بالكرة وبدونها، تمارين تغيير الاتجاه بسرعة، تمارين إرسال العرضيات من وضعيات مختلفة (من الحركة والثبات)، تمارين 1 ضد 1 هجومياً ودفاعياً على الطرف.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**العرضيات والتسديد**</td>
+                            <td>تمارين إرسال العرضيات من وضعيات مختلفة وبسرعات مختلفة، تمارين التسديد على المرمى بعد المراوغة أو استلام تمريرة من الطرف، تمارين إنهاء الهجمة من زوايا مختلفة.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**الحركة بدون كرة والإنهاء**</td>
+                            <td>تمارين التحرك القطري خلف المدافعين، تمارين استلام الكرة في المساحات الضيقة والتحول السريع نحو المرمى، تمارين التعاون مع لاعبين آخرين لخلق الفرص (تمريرات ثنائية، اختراقات).</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="playmakers">و. قسم صناع اللعب (لاعب الوسط المهاجم - Attacking Midfielder/Playmaker):</h3>
+                <p><strong>المهام الرئيسية:</strong> ربط خط الوسط بالهجوم، خلق الفرص للمهاجمين، تسجيل الأهداف، التحكم في إيقاع اللعب في الثلث الهجومي.</p>
+                <p><strong>النصائح الأساسية:</strong></p>
+                <ul>
+                    <li>**الرؤية الثاقبة والقدرة على التمريرات الحاسمة (Through balls, Key passes).**</li>
+                    <li>**المهارة العالية في التحكم بالكرة والمراوغة في المساحات الضيقة.**</li>
+                    <li>**القدرة على التسديد الدقيق من خارج وداخل منطقة الجزاء.**</li>
+                    <li>**التحرك الذكي بين الخطوط لاستلام الكرة.**</li>
+                    <li>**اتخاذ القرارات السريعة والصحيحة تحت الضغط.**</li>
+                    <li>**الإبداع والابتكار في اللعب.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@odeyamiin/video/7403750119964806407" target="_blank" class="tiktok-link">شاهد تمرين باص وتسارع (مفيد لصناع اللعب) على TikTok</a>
+
+                <h4>جدول تدريبي مقترح (3 أيام في الأسبوع بالإضافة لتدريبات الفريق):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>التركيز الأساسي</th>
+                            <th>تمارين مقترحة</th>
+                            <th>المدة (تقريبية)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**التمرير الحاسم والرؤية**</td>
+                            <td>تمارين إرسال التمريرات البينية بأنواعها (أرضية، ساقطة)، تمارين "روندو" مع التركيز على التمريرة النهائية، تمارين قراءة تحركات المهاجمين وتمرير الكرة في المساحة المناسبة.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**التحكم والتسديد**</td>
+                            <td>تمارين التحكم بالكرة في مساحات ضيقة تحت الضغط، تمارين المراوغة والتخلص من الرقابة، تمارين التسديد من وضعيات مختلفة بعد استقبال تمريرة أو مراوغة، تمارين التسديد من الكرات الثابتة.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**الحركة وخلق الفرص**</td>
+                            <td>تمارين التحرك لاستلام الكرة بين خطوط دفاع الخصم، تمارين التعاون مع المهاجمين والأجنحة (تمريرات ثنائية، اختراقات مشتركة)، تمارين محاكاة مواقف هجومية واتخاذ قرارات سريعة.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="strikers">ز. قسم المهاجمين الصريحين (رأس الحربة - Strikers):</h3>
+                <p><strong>المهام الرئيسية:</strong> تسجيل الأهداف، التحرك داخل وخارج منطقة الجزاء، الضغط على مدافعي الخصم، الاحتفاظ بالكرة تحت الضغط.</p>
+                <p><strong>النصائح الأساسية:</strong></p>
+                <ul>
+                    <li>**الحاسة التهديفية العالية والإنهاء الدقيق (Finishing) بكلتا القدمين والرأس.**</li>
+                    <li>**التحرك الذكي بدون كرة (Timing of runs) لاختراق الدفاع واستقبال التمريرات.**</li>
+                    <li>**القوة البدنية للاحتفاظ بالكرة وحماية المدافعين.**</li>
+                    <li>**القدرة على التسديد من لمسة واحدة.**</li>
+                    <li>**الهدوء أمام المرمى.**</li>
+                    <li>**الاستفادة من الكرات العرضية والثابتة.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@safrahft/video/7377795063541222664" target="_blank" class="tiktok-link">شاهد تحسين مهارات التسديد للمهاجمين على TikTok</a>
+
+                <h4>جدول تدريبي مقترح (3 أيام في الأسبوع بالإضافة لتدريبات الفريق):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اليوم</th>
+                            <th>التركيز الأساسي</th>
+                            <th>تمارين مقترحة</th>
+                            <th>المدة (تقريبية)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**الإنهاء والتسديد**</td>
+                            <td>تمارين التسديد على المرمى من زوايا ومسافات مختلفة (بعد استلام تمريرة، بعد مراوغة، من لمسة واحدة)، تمارين إنهاء الكرات العرضية (بالقدم والرأس)، تمارين التسديد تحت ضغط مدافع.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**الحركة بدون كرة والقوة**</td>
+                            <td>تمارين التحرك لكسر مصيدة التسلل، تمارين استلام الكرة والتحول نحو المرمى بسرعة، تمارين الاحتفاظ بالكرة والمدافع في ظهرك، تمارين القوة البدنية مع التركيز على الجزء العلوي والسفلي.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**مواقف اللعب والضغط**</td>
+                            <td>تمارين محاكاة مواقف هجومية داخل منطقة الجزاء (2 ضد 1، 2 ضد 2)، تمارين الضغط على المدافعين عند بناء الهجمة، تمارين استغلال أخطاء المدافعين، تمارين الضربات الرأسية الهجومية.</td>
+                            <td>60-75 دقيقة</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="section3">3. نصائح عامة وتكتيكات اللعب:</h2>
+                <ul>
+                    <li>**فهم خطط اللعب المختلفة:**
+                        <ul>
+                            <li>تعرف على أساسيات خطط اللعب الشائعة (مثل 4-4-2، 4-3-3، 3-5-2) ودورك المحدد داخل كل خطة.</li>
+                            <li>ناقش مع مدربك الجوانب التكتيكية للفريق وكيف يمكنك المساهمة بفعالية.</li>
+                        </ul>
+                    </li>
+                    <li>**أهمية التواصل في الملعب:**
+                        <ul>
+                            <li>تحدث مع زملائك باستمرار (اطلب الكرة، حذر من الخصم، وجه زميلك).</li>
+                            <li>استخدم إشارات اليد الواضحة.</li>
+                            <li>التواصل الجيد يمنع سوء الفهم ويحسن من أداء الفريق.</li>
+                        </ul>
+                    </li>
+                    <li>**الروح الرياضية والأخلاق العالية:**
+                        <ul>
+                            <li>احترم الخصم والحكام والجمهور.</li>
+                            <li>تقبل قرارات الحكم حتى لو لم تكن مقتنعاً بها.</li>
+                            <li>العب بخشونة ولكن بنزاهة، وتجنب إيذاء المنافسين.</li>
+                            <li>كن نموذجاً إيجابياً داخل وخارج الملعب.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="https://www.tiktok.com/@coachomardz/video/7372126790258658592" target="_blank" class="tiktok-link">شاهد تحولات هجومية وتكتيكات كرة القدم على TikTok</a>
+                <a href="https://www.tiktok.com/@abo.gaber_/video/7304770456878468358" target="_blank" class="tiktok-link">شاهد لماذا يربط لاعبو كرة القدم معصم اليد (قد يفيد التواصل) على TikTok</a>
+
+                <h2 id="llm-features" class="mt-8 text-center text-3xl font-bold text-gray-800">ميزات الذكاء الاصطناعي ✨</h2>
+
+                <div class="llm-feature-section">
+                    <h3>✨ مولد خطة تدريب شخصية ✨</h3>
+                    <p class="mb-4 text-gray-700">أدخل معلوماتك للحصول على خطة تدريب مخصصة.</p>
+                    <label for="player-position" class="block text-gray-700 text-sm font-bold mb-2">مركز اللاعب:</label>
+                    <input type="text" id="player-position" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="مثال: مهاجم، لاعب وسط">
+
+                    <label for="player-strengths" class="block text-gray-700 text-sm font-bold mb-2">نقاط القوة:</label>
+                    <textarea id="player-strengths" placeholder="مثال: تسديد قوي، رؤية جيدة للملعب" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+
+                    <label for="player-weaknesses" class="block text-gray-700 text-sm font-bold mb-2">نقاط الضعف:</label>
+                    <textarea id="player-weaknesses" placeholder="مثال: السرعة، الدفاع" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+
+                    <label for="training-goal" class="block text-gray-700 text-sm font-bold mb-2">الهدف من التدريب:</label>
+                    <input type="text" id="training-goal" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="مثال: تحسين اللياقة البدنية، دقة التمرير">
+
+                    <button id="generate-plan-btn">توليد الخطة ✨</button>
+                    <div id="plan-loading-indicator" class="loading-indicator hidden">جاري التوليد...</div>
+                    <div id="personal-plan-response" class="llm-response hidden"></div>
+                    <button id="translate-plan-btn" class="translate-button hidden">ترجمة هذه الاستجابة</button>
+                    <div id="translated-plan-response" class="translated-response hidden"></div>
+                </div>
+
+                <div class="llm-feature-section mt-8">
+                    <h3>✨ تحليل تكتيكي سريع ✨</h3>
+                    <p class="mb-4 text-gray-700">صف موقفاً في المباراة للحصول على تحليل واقتراحات تكتيكية.</p>
+                    <label for="tactical-scenario" class="block text-gray-700 text-sm font-bold mb-2">وصف الموقف:</label>
+                    <textarea id="tactical-scenario" placeholder="مثال: فريقي متأخر بهدف، الخصم يتراجع للدفاع، تبقى 10 دقائق على نهاية المباراة." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                    
+                    <button id="analyze-tactic-btn">تحليل الموقف ✨</button>
+                    <div id="tactic-loading-indicator" class="loading-indicator hidden">جاري التحليل...</div>
+                    <div id="tactical-analysis-response" class="llm-response hidden"></div>
+                    <button id="translate-tactic-btn" class="translate-button hidden">ترجمة هذه الاستجابة</button>
+                    <div id="translated-tactic-response" class="translated-response hidden"></div>
+                </div>
+
+                <div class="llm-feature-section mt-8">
+                    <h3>✨ نصائح للوقاية من الإصابات والتعافي ✨</h3>
+                    <p class="mb-4 text-gray-700">صف الألم أو الإصابة للحصول على نصائح.</p>
+                    <label for="injury-description" class="block text-gray-700 text-sm font-bold mb-2">وصف الألم/الإصابة:</label>
+                    <textarea id="injury-description" placeholder="مثال: ألم خفيف في الركبة بعد الجري، التواء بسيط في الكاحل." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                    
+                    <button id="get-injury-advice-btn">الحصول على النصيحة ✨</button>
+                    <div id="injury-loading-indicator" class="loading-indicator hidden">جاري التوليد...</div>
+                    <div id="injury-advice-response" class="llm-response hidden"></div>
+                    <button id="translate-injury-btn" class="translate-button hidden">ترجمة هذه الاستجابة</button>
+                    <div id="translated-injury-response" class="translated-response hidden"></div>
+                </div>
+
+                <div class="llm-feature-section mt-8">
+                    <h3>✨ مولد خطاب تحفيزي قبل المباراة ✨</h3>
+                    <p class="mb-4 text-gray-700">أدخل تفاصيل المباراة للحصول على خطاب تحفيزي.</p>
+                    <label for="match-details" class="block text-gray-700 text-sm font-bold mb-2">تفاصيل المباراة/الوضع:</label>
+                    <textarea id="match-details" placeholder="مثال: مباراة نهائية، الفريق بحاجة للفوز، الخصم قوي جداً." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                    
+                    <button id="generate-motivation-btn">توليد الخطاب ✨</button>
+                    <div id="motivation-loading-indicator" class="loading-indicator hidden">جاري التوليد...</div>
+                    <div id="motivation-speech-response" class="llm-response hidden"></div>
+                    <button id="translate-motivation-btn" class="translate-button hidden">ترجمة هذه الاستجابة</button>
+                    <div id="translated-motivation-response" class="translated-response hidden"></div>
+                </div>
+
+                <div class="llm-feature-section mt-8">
+                    <h3>✨ اقتراح تمارين بديلة ✨</h3>
+                    <p class="mb-4 text-gray-700">صف التمرين الحالي أو العضلة المستهدفة للحصول على بدائل.</p>
+                    <label for="alternative-exercise-input" class="block text-gray-700 text-sm font-bold mb-2">التمرين أو العضلة:</label>
+                    <textarea id="alternative-exercise-input" placeholder="مثال: تمارين الضغط، عضلة الفخذ الخلفية." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                    
+                    <button id="get-alternative-exercise-btn">اقتراح بدائل ✨</button>
+                    <div id="alternative-exercise-loading-indicator" class="loading-indicator hidden">جاري الاقتراح...</div>
+                    <div id="alternative-exercise-response" class="llm-response hidden"></div>
+                    <button id="translate-alt-exercise-btn" class="translate-button hidden">ترجمة هذه الاستجابة</button>
+                    <div id="translated-alt-exercise-response" class="translated-response hidden"></div>
+                </div>
+
+                <div class="llm-feature-section mt-8">
+                    <h3>✨ تحليل أداء اللاعب ✨</h3>
+                    <p class="mb-4 text-gray-700">صف أداء اللاعب في موقف معين للحصول على تحليل.</p>
+                    <label for="player-performance-input" class="block text-gray-700 text-sm font-bold mb-2">وصف الأداء:</label>
+                    <textarea id="player-performance-input" placeholder="مثال: لاعب الوسط يقطع الكرات جيداً لكنه يخطئ في التمرير الطويل، المهاجم يتحرك كثيراً لكنه يفتقد للإنهاء." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                    
+                    <button id="analyze-player-performance-btn">تحليل الأداء ✨</button>
+                    <div id="player-performance-loading-indicator" class="loading-indicator hidden">جاري التحليل...</div>
+                    <div id="player-performance-response" class="llm-response hidden"></div>
+                    <button id="translate-performance-btn" class="translate-button hidden">ترجمة هذه الاستجابة</button>
+                    <div id="translated-performance-response" class="translated-response hidden"></div>
+                </div>
+
+                <div class="llm-feature-section mt-8">
+                    <h3>✨ مولد أسئلة اختبار كرة قدم ✨</h3>
+                    <p class="mb-4 text-gray-700">أدخل موضوعاً لتوليد أسئلة اختبار.</p>
+                    <label for="quiz-topic-input" class="block text-gray-700 text-sm font-bold mb-2">موضوع الاختبار:</label>
+                    <input type="text" id="quiz-topic-input" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="مثال: تاريخ كأس العالم، قوانين اللعبة، تكتيكات الدفاع.">
+                    
+                    <button id="generate-quiz-btn">توليد الأسئلة ✨</button>
+                    <div id="quiz-loading-indicator" class="loading-indicator hidden">جاري التوليد...</div>
+                    <div id="quiz-response" class="llm-response hidden"></div>
+                    <button id="translate-quiz-btn" class="translate-button hidden">ترجمة هذه الاستجابة</button>
+                    <div id="translated-quiz-response" class="translated-response hidden"></div>
+                </div>
+
+
+                <h2 id="section4">4. خاتمة:</h2>
+                <p>نأمل أن يكون هذا الكتاب الرقمي نقطة انطلاق مفيدة في رحلتك لتطوير مهاراتك في كرة القدم. تذكر أن الاستمرارية في التدريب، والتعلم من الأخطاء، والشغف باللعبة هي العوامل الأساسية لتحقيق أهدافك. لا تتردد في البحث عن مصادر إضافية للمعرفة والتدريب، والأهم من ذلك، استمتع بكل لحظة تقضيها في ممارسة هذه الرياضة الرائعة.</p>
+                <p class="text-center text-xl font-bold mt-8">نتمنى لك كل التوفيق في مسيرتك الكروية!</p>
+            </div>
+
+            <div id="english-book-content" class="hidden">
+                <h1>Table of Contents:</h1>
+                <ol>
+                    <li><a href="#section1" class="text-blue-600 hover:underline">Fundamentals of Football for Everyone</a></li>
+                    <li><a href="#section2" class="text-blue-600 hover:underline">Specialized Training by Positions</a>
+                        <ul class="pl-4 mt-2">
+                            <li><a href="#goalkeepers" class="text-blue-600 hover:underline">Goalkeepers Section</a></li>
+                            <li><a href="#centerbacks" class="text-blue-600 hover:underline">Defenders Section (Center Backs)</a></li>
+                            <li><a href="#fullbacks" class="text-blue-600 hover:underline">Fullbacks Section (Right and Left Backs)</a></li>
+                            <li><a href="#midfielders" class="text-blue-600 hover:underline">Midfielders Section</a></li>
+                            <li><a href="#wingers" class="text-blue-600 hover:underline">Wingers Section (Right and Left Wingers)</a></li>
+                            <li><a href="#playmakers" class="text-blue-600 hover:underline">Playmakers Section (Attacking Midfielder)</a></li>
+                            <li><a href="#strikers" class="text-blue-600 hover:underline">Strikers Section (Center Forwards)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#section3" class="text-blue-600 hover:underline">General Tips and Game Tactics</a></li>
+                    <li><a href="#llm-features" class="text-blue-600 hover:underline">AI Features ✨</a></li>
+                    <li><a href="#section4" class="text-blue-600 hover:underline">Conclusion</a></li>
+                </ol>
+
+                <h2 id="section1">1. Fundamentals of Football for Everyone:</h2>
+                <p>Before diving into the specifics of each position, it is essential for every player to have a strong foundation of physical fitness and a general understanding of the game.</p>
+
+                <h3>Warm-up and its Importance:</h3>
+                <p><strong>Why?</strong> Preparing muscles and joints for physical exertion, increasing blood flow, reducing injury risk, improving mental focus.</p>
+                <p><strong>How?</strong> Starts with light aerobic exercises (light jogging, jump rope), then dynamic stretching exercises (moving joints through their full range of motion), and finally ball-specific exercises (short passes, ball control).</p>
+                <p><strong>Duration:</strong> 15-20 minutes.</p>
+                <a href="https://www.tiktok.com/@koracoach/video/7352119484603256072" target="_blank" class="tiktok-link">Watch Football Warm-up Drills on TikTok</a>
+
+                <h3>General Fitness Exercises:</h3>
+                <ul>
+                    <li><strong>Speed:</strong> Sprinting exercises (20-40 meters), agility drills (agility ladder, cones drills).</li>
+                    <li><strong>Strength:</strong> Bodyweight exercises (push-ups, pull-ups, squats), weight training (under coach supervision).</li>
+                    <li><strong>Endurance:</strong> Long-distance running at a moderate pace, interval training.</li>
+                    <li><strong>Flexibility:</strong> Static stretching exercises after training (holding stretch for 20-30 seconds).</li>
+                </ul>
+                <a href="https://www.tiktok.com/@adam.fit5/video/7266788165443276034" target="_blank" class="tiktok-link">Watch Football Fitness Exercises on TikTok</a>
+
+                <h3>Proper Nutrition for a Football Player:</h3>
+                <ul>
+                    <li><strong>Complex Carbohydrates:</strong> Main source of energy (whole wheat bread, brown rice, pasta, potatoes).</li>
+                    <li><strong>Proteins:</strong> For muscle building and repair (chicken, fish, lean red meat, eggs, legumes).</li>
+                    <li><strong>Healthy Fats:</strong> For energy and body functions (avocado, nuts, olive oil).</li>
+                    <li><strong>Vitamins and Minerals:</strong> From fresh vegetables and fruits.</li>
+                    <li><strong>Hydration:</strong> Drinking sufficient amounts of water before, during, and after training and matches.</li>
+                </ul>
+                <a href="https://www.tiktok.com/@odeyamiin/video/7230547349188267270" target="_blank" class="tiktok-link">Watch Football Player Nutrition Tips on TikTok</a>
+
+                <h3>Importance of Rest and Recovery:</h3>
+                <ul>
+                    <li>Sufficient sleep (7-9 hours) to allow the body to rebuild and repair.</li>
+                    <li>Active rest days (very light exercises or stretches) to avoid overtraining.</li>
+                    <li>Recovery techniques such as ice baths or massage (if possible).</li>
+                </ul>
+
+                <h3>Mental Aspect in Football:</h3>
+                <ul>
+                    <li><strong>Focus:</strong> Ability to maintain attention throughout the match.</li>
+                    <li><strong>Self-Confidence:</strong> Belief in your abilities.</li>
+                    <li><strong>Dealing with Pressure:</strong> Maintaining composure and making correct decisions under pressure.</li>
+                    <li><strong>Visualization:</strong> Imagining yourself successfully executing skills and making decisions.</li>
+                </ul>
+                <a href="https://www.tiktok.com/@safrahft/video/7381922002719870215" target="_blank" class="tiktok-link">Watch Mental Focus in Football on TikTok</a>
+
+                <h2 id="section2">2. Specialized Training by Positions:</h2>
+                <h3 id="goalkeepers">a. Goalkeepers Section:</h3>
+                <p><strong>Key Tasks:</strong> Preventing goals, organizing defense, initiating attacks.</p>
+                <p><strong>Key Tips:</strong></p>
+                <ul>
+                    <li>**Bravery and Leadership:** Be confident and a leader in the penalty area.</li>
+                    <li>**Quick Reactions:** Practice fast responses to unexpected shots.</li>
+                    <li>**Correct Positioning:** Learn how to cover angles and stand in the right place.</li>
+                    <li>**Ball Handling:** Practice catching various balls (ground balls, high balls, powerful shots).</li>
+                    <li>**Distribution:** Master throwing the ball by hand and kicking it accurately to start attacks.</li>
+                    <li>**Communication:** Constantly direct defenders.</li>
+                </ul>
+                <a href="https://www.tiktok.com/@eplworld/video/7349857739687939329" target="_blank" class="tiktok-link">Watch Goalkeeper Drills on TikTok</a>
+
+                <h4>Suggested Training Schedule (3 days a week in addition to team training):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Focus</th>
+                            <th>Suggested Exercises</th>
+                            <th>Duration (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**Handling and Reactions**</td>
+                            <td>Exercises for catching close-range balls of various types (from coach or wall), reaction drills to sudden shots from different distances, jumping and catching high balls.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**Positioning and Distribution**</td>
+                            <td>Exercises for moving along the goal line to cover angles, drills for coming out for crosses, exercises for throwing the ball by hand for different distances and targets, exercises for kicking the ball from the ground and by hand (accuracy and power).</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**Game Situations and Agility**</td>
+                            <td>Simulated 1v1 situations, rebound ball handling drills, agility exercises specific to goalkeepers (low hurdles, cones), explosive leg strength exercises.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="centerbacks">b. Defenders Section (Center Backs):</h3>
+                <p><strong>Key Tasks:</strong> Stopping opponent attackers, intercepting balls, building play from the back, leading the defense line.</p>
+                <p><strong>Key Tips:</strong></p>
+                <ul>
+                    <li>**Physical Strength and Toughness in Duels:** Be strong in one-on-one confrontations.</li>
+                    <li>**Smart Defensive Positioning:** Anticipate attacker and ball movement.</li>
+                    <li>**Ability to Read the Game:** Intercept passes and position correctly.</li>
+                    <li>**Mastering Clearances and Accurate Passing:** Clear danger and start attacks.</li>
+                    <li>**Defensive and Offensive Headers:** Master heading the ball in both situations.</li>
+                    <li>**Communication with the defense line and goalkeeper.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@_brothers_football_/video/7341398644815449349" target="_blank" class="tiktok-link">Watch Center Back Drills on TikTok</a>
+
+                <h4>Suggested Training Schedule (3 days a week in addition to team training):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Focus</th>
+                            <th>Suggested Exercises</th>
+                            <th>Duration (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**Duels and Headers**</td>
+                            <td>1v1 defensive drills (attempting to win the ball), various tackling exercises, heading drills from throw-ins and corners (defensive and offensive), physical strength exercises (upper and lower body).</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**Positioning and Intercepting**</td>
+                            <td>Drills for reading the game and intercepting through balls, defensive covering exercises, moving as a unit with the rest of the defense line, simulating various defensive situations.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**Building Play and Passing**</td>
+                            <td>Accurate passing drills for different distances (short and long), receiving the ball under pressure and correctly disposing of it, switching play exercises, agility and balance drills.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="fullbacks">c. Fullbacks Section (Right and Left Backs):</h3>
+                <p><strong>Key Tasks:</strong> Defending on the flanks, supporting attack and sending crosses, providing width on the field.</p>
+                <p><strong>Key Tips:</strong></p>
+                <ul>
+                    <li>**Speed and Endurance:** Ability to run up and down the sideline.</li>
+                    <li>**Dribbling Ability and Accurate Crosses:** Beat opponent defenders and send dangerous balls.</li>
+                    <li>**Defensive Awareness and Positioning:** Close down spaces on the wings and prevent breakthroughs.</li>
+                    <li>**Overlapping with the winger.**</li>
+                    <li>**Balance between defensive and offensive duties.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@gemy_masr7/video/7437475542296726802" target="_blank" class="tiktok-link">Watch Fullback Offensive Drills on TikTok</a>
+
+                <h4>Suggested Training Schedule (3 days a week in addition to team training):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Focus</th>
+                            <th>Suggested Exercises</th>
+                            <th>Duration (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**Speed and Crosses**</td>
+                            <td>Sprint drills with and without the ball, quick change of direction drills, crossing drills from various positions (moving and static), 1v1 offensive and defensive drills on the flank.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**Endurance and Defense**</td>
+                            <td>Interval running drills to simulate match demands, defensive positioning drills on the flank, tackling and sliding exercises, ball recovery and quick transition to attack drills.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**Dribbling, Passing, and Awareness**</td>
+                            <td>Dribbling drills at different speeds, short and long passing drills on the flanks, overlapping with another player, reading the game drills to determine when to attack and when to defend.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="midfielders">d. Midfielders Section (Defensive Midfielder and Box-to-Box Midfielder):</h3>
+                <p><strong>Key Tasks:</strong></p>
+                <ul>
+                    <li>**Defensive Midfielder:** Protecting the defense line, winning balls, simple distribution.</li>
+                    <li>**Box-to-Box Midfielder:** Linking defense and attack, contributing defensively and offensively, moving all over the field.</li>
+                </ul>
+                <p><strong>Key Tips:</strong></p>
+                <ul>
+                    <li>**High endurance and comprehensive field vision.**</li>
+                    <li>**Mastering ball winning (for defensive midfielders) and clean tackles.**</li>
+                    <li>**Accurate passing (short and long) and ability to change game tempo.**</li>
+                    <li>**Long-range shooting (for box-to-box midfielders).**</li>
+                    <li>**Intelligent off-ball movement to open or close spaces.**</li>
+                    <li>**Leadership in midfield.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@eb_football/video/7419015610773900549" target="_blank" class="tiktok-link">Watch Professional Footballer Training (includes Midfielders) on TikTok</a>
+
+                <h4>Suggested Training Schedule (3 days a week in addition to team training):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Focus</th>
+                            <th>Suggested Exercises</th>
+                            <th>Duration (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**Endurance and Ball Winning (for DM)**</td>
+                            <td>Long-distance running drills, pressing and winning the ball in tight spaces, 1v1 and 2v2 defensive drills, short passing under pressure.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**Passing and Vision (for all)**</td>
+                            <td>Various passing drills (inside foot, outside foot, long passes), switching play with one pass, "rondo" drills (passing circle), drills for finding spaces and receiving the ball.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**Movement and Shooting (for Box-to-Box)**</td>
+                            <td>Off-ball movement to receive passes, "give and go" drills, shooting from different distances after receiving a pass or dribbling, simulating transitions from defense to attack and vice versa, explosive strength exercises.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="wingers">e. Wingers Section (Right and Left Wingers):</h3>
+                <p><strong>Key Tasks:</strong> Breaking through opponent defenses from the flanks, sending crosses, scoring goals, creating chances.</p>
+                <p><strong>Key Tips:</strong></p>
+                <ul>
+                    <li>**Exceptional speed and dribbling skill.**</li>
+                    <li>**Ability to shoot accurately and powerfully with both feet.**</li>
+                    <li>**Mastering various types of crosses (low, high, early).**</li>
+                    <li>**Off-ball movement to penetrate opponent defense or draw defenders.**</li>
+                    <li>**Cooperation with the fullback and playmaker.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@odeyamiin/video/7403750119964806407" target="_blank" class="tiktok-link">Watch Passing and Acceleration Drill (Useful for Wingers) on TikTok</a>
+
+                <h4>Suggested Training Schedule (3 days a week in addition to team training):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Focus</th>
+                            <th>Suggested Exercises</th>
+                            <th>Duration (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**Speed and Dribbling**</td>
+                            <td>Sprint drills with and without the ball, quick change of direction and dribbling drills (using cones or against a dummy defender), 1v1 offensive drills on the flank.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**Crosses and Shooting**</td>
+                            <td>Crossing drills from various positions and speeds, shooting drills on goal after dribbling or receiving a pass from the flank, finishing drills from different angles.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**Off-ball Movement and Finishing**</td>
+                            <td>Diagonal runs behind defenders, receiving the ball in tight spaces and quick transition towards goal, cooperation drills with other players to create chances (one-twos, combined penetrations).</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="playmakers">f. Playmakers Section (Attacking Midfielder):</h3>
+                <p><strong>Key Tasks:</strong> Linking midfield to attack, creating chances for forwards, scoring goals, controlling game tempo in the attacking third.</p>
+                <p><strong>Key Tips:</strong></p>
+                <ul>
+                    <li>**Incisive vision and ability to make decisive passes (through balls, key passes).**</li>
+                    <li>**High skill in ball control and dribbling in tight spaces.**</li>
+                    <li>**Ability to shoot accurately from outside and inside the penalty area.**</li>
+                    <li>**Intelligent movement between lines to receive the ball.**</li>
+                    <li>**Making quick and correct decisions under pressure.**</li>
+                    <li>**Creativity and innovation in play.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@odeyamiin/video/7403750119964806407" target="_blank" class="tiktok-link">Watch Passing and Acceleration Drill (Useful for Playmakers) on TikTok</a>
+
+                <h4>Suggested Training Schedule (3 days a week in addition to team training):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Focus</th>
+                            <th>Suggested Exercises</th>
+                            <th>Duration (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**Decisive Passing and Vision**</td>
+                            <td>Drills for sending various types of through balls (ground, chipped), "rondo" drills with focus on the final pass, drills for reading forward movements and passing the ball into the right space.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**Control and Shooting**</td>
+                            <td>Ball control drills in tight spaces under pressure, dribbling and escaping marking, shooting drills from various positions after receiving a pass or dribbling, set-piece shooting drills.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**Movement and Chance Creation**</td>
+                            <td>Movement drills to receive the ball between opponent defensive lines, cooperation drills with forwards and wingers (one-twos, combined penetrations), simulating attacking situations and making quick decisions.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 id="strikers">g. Strikers Section (Center Forwards):</h3>
+                <p><strong>Key Tasks:</strong> Scoring goals, moving inside and outside the penalty area, pressing opponent defenders, holding up the ball under pressure.</p>
+                <p><strong>Key Tips:</strong></p>
+                <ul>
+                    <li>**High goal-scoring instinct and accurate finishing with both feet and head.**</li>
+                    <li>**Intelligent off-ball movement (timing of runs) to penetrate defense and receive passes.**</li>
+                    <li>**Physical strength to hold up the ball and shield from defenders.**</li>
+                    <li>**Ability to shoot with one touch.**</li>
+                    <li>**Composure in front of goal.**</li>
+                    <li>**Benefiting from crosses and set pieces.**</li>
+                </ul>
+                <a href="https://www.tiktok.com/@safrahft/video/7377795063541222664" target="_blank" class="tiktok-link">Watch Striker Shooting Skills on TikTok</a>
+
+                <h4>Suggested Training Schedule (3 days a week in addition to team training):</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Main Focus</th>
+                            <th>Suggested Exercises</th>
+                            <th>Duration (approx.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**1**</td>
+                            <td>**Finishing and Shooting**</td>
+                            <td>Shooting drills on goal from various angles and distances (after receiving a pass, after dribbling, one-touch), finishing crosses (with foot and head), shooting under defender pressure.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**2**</td>
+                            <td>**Off-ball Movement and Strength**</td>
+                            <td>Movement drills to break the offside trap, receiving the ball and quickly turning towards goal, holding up the ball with a defender on your back, physical strength exercises focusing on upper and lower body.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                        <tr>
+                            <td>**3**</td>
+                            <td>**Game Situations and Pressing**</td>
+                            <td>Simulated attacking situations inside the penalty area (2v1, 2v2), pressing defenders during build-up play, exploiting defender mistakes, offensive heading drills.</td>
+                            <td>60-75 minutes</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2 id="section3">3. General Tips and Game Tactics:</h2>
+                <ul>
+                    <li>**Understanding Different Game Formations:**
+                        <ul>
+                            <li>Learn the basics of common formations (e.g., 4-4-2, 4-3-3, 3-5-2) and your specific role within each formation.</li>
+                            <li>Discuss the team's tactical aspects with your coach and how you can contribute effectively.</li>
+                        </ul>
+                    </li>
+                    <li>**Importance of Communication on the Field:**
+                        <ul>
+                            <li>Constantly communicate with your teammates (ask for the ball, warn about opponents, direct your teammate).</li>
+                            <li>Use clear hand signals.</li>
+                            <li>Good communication prevents misunderstandings and improves team performance.</li>
+                        </ul>
+                    </li>
+                    <li>**Sportsmanship and High Morals:**
+                        <ul>
+                            <li>Respect opponents, referees, and the audience.</li>
+                            <li>Accept referee decisions even if you're not convinced by them.</li>
+                            <li>Play tough but fairly, and avoid injuring opponents.</li>
+                            <li>Be a positive role model on and off the field.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="https://www.tiktok.com/@coachomardz/video/7372126790258658592" target="_blank" class="tiktok-link">Watch Offensive Transitions and Football Tactics on TikTok</a>
+                <a href="https://www.tiktok.com/@abo.gaber_/video/7304770456878468358" target="_blank" class="tiktok-link">Watch Why Football Players Tie Their Wrists (May Aid Communication) on TikTok</a>
+
+                <h2 id="section4">4. Conclusion:</h2>
+                <p>We hope this digital book serves as a useful starting point in your journey to develop your football skills. Remember that consistency in training, learning from mistakes, and passion for the game are the essential factors for achieving your goals. Do not hesitate to seek additional sources of knowledge and training, and most importantly, enjoy every moment you spend playing this wonderful sport.</p>
+                <p class="text-center text-xl font-bold mt-8">We wish you all the best in your football career!</p>
+            </div>
+            
+            <h2 id="llm-features" class="mt-8 text-center text-3xl font-bold text-gray-800">AI Features ✨</h2>
+
+            <div class="llm-feature-section">
+                <h3>✨ Personalized Training Plan Generator ✨</h3>
+                <p class="mb-4 text-gray-700">Enter your information to get a personalized training plan.</p>
+                <label for="player-position" class="block text-gray-700 text-sm font-bold mb-2">Player Position:</label>
+                <input type="text" id="player-position" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="Example: Striker, Midfielder">
+
+                <label for="player-strengths" class="block text-gray-700 text-sm font-bold mb-2">Strengths:</label>
+                <textarea id="player-strengths" placeholder="Example: Strong shot, good field vision" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+
+                <label for="player-weaknesses" class="block text-gray-700 text-sm font-bold mb-2">Weaknesses:</label>
+                <textarea id="player-weaknesses" placeholder="Example: Speed, Defense" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+
+                <label for="training-goal" class="block text-gray-700 text-sm font-bold mb-2">Training Goal:</label>
+                <input type="text" id="training-goal" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="Example: Improve fitness, passing accuracy">
+
+                <button id="generate-plan-btn">Generate Plan ✨</button>
+                <div id="plan-loading-indicator" class="loading-indicator hidden">Generating...</div>
+                <div id="personal-plan-response" class="llm-response hidden"></div>
+                <button id="translate-plan-btn" class="translate-button hidden">Translate this Response</button>
+                <div id="translated-plan-response" class="translated-response hidden"></div>
+            </div>
+
+            <div class="llm-feature-section mt-8">
+                <h3>✨ Quick Tactical Analysis ✨</h3>
+                <p class="mb-4 text-gray-700">Describe a game situation to get tactical analysis and suggestions.</p>
+                <label for="tactical-scenario" class="block text-gray-700 text-sm font-bold mb-2">Scenario Description:</label>
+                <textarea id="tactical-scenario" placeholder="Example: My team is down by one goal, opponent is defending deep, 10 minutes left in the match." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                
+                <button id="analyze-tactic-btn">Analyze Scenario ✨</button>
+                <div id="tactic-loading-indicator" class="loading-indicator hidden">Analyzing...</div>
+                <div id="tactical-analysis-response" class="llm-response hidden"></div>
+                <button id="translate-tactic-btn" class="translate-button hidden">Translate this Response</button>
+                <div id="translated-tactic-response" class="translated-response hidden"></div>
+            </div>
+
+            <div class="llm-feature-section mt-8">
+                <h3>✨ Injury Prevention & Recovery Tips ✨</h3>
+                <p class="mb-4 text-gray-700">Describe pain or injury to get advice.</p>
+                <label for="injury-description" class="block text-gray-700 text-sm font-bold mb-2">Pain/Injury Description:</label>
+                <textarea id="injury-description" placeholder="Example: Slight knee pain after running, minor ankle sprain." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                
+                <button id="get-injury-advice-btn">Get Advice ✨</button>
+                <div id="injury-loading-indicator" class="loading-indicator hidden">Generating...</div>
+                <div id="injury-advice-response" class="llm-response hidden"></div>
+                <button id="translate-injury-btn" class="translate-button hidden">Translate this Response</button>
+                <div id="translated-injury-response" class="translated-response hidden"></div>
+            </div>
+
+            <div class="llm-feature-section mt-8">
+                <h3>✨ Pre-match Motivational Speech Generator ✨</h3>
+                <p class="mb-4 text-gray-700">Enter match details to get a motivational speech.</p>
+                <label for="match-details" class="block text-gray-700 text-sm font-bold mb-2">Match/Situation Details:</label>
+                <textarea id="match-details" placeholder="Example: Final match, team needs to win, opponent is very strong." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                
+                <button id="generate-motivation-btn">Generate Speech ✨</button>
+                <div id="motivation-loading-indicator" class="loading-indicator hidden">Generating...</div>
+                <div id="motivation-speech-response" class="llm-response hidden"></div>
+                <button id="translate-motivation-btn" class="translate-button hidden">Translate this Response</button>
+                <div id="translated-motivation-response" class="translated-response hidden"></div>
+            </div>
+
+             <div class="llm-feature-section mt-8">
+                <h3>✨ Alternative Exercise Suggestion ✨</h3>
+                <p class="mb-4 text-gray-700">Describe current exercise or target muscle to get alternatives.</p>
+                <label for="alternative-exercise-input" class="block text-gray-700 text-sm font-bold mb-2">Exercise or Muscle:</label>
+                <textarea id="alternative-exercise-input" placeholder="Example: Push-ups, Hamstring muscle." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                
+                <button id="get-alternative-exercise-btn">Suggest Alternatives ✨</button>
+                <div id="alternative-exercise-loading-indicator" class="loading-indicator hidden">Suggesting...</div>
+                <div id="alternative-exercise-response" class="llm-response hidden"></div>
+                <button id="translate-alt-exercise-btn" class="translate-button hidden">Translate this Response</button>
+                <div id="translated-alt-exercise-response" class="translated-response hidden"></div>
+            </div>
+
+            <div class="llm-feature-section mt-8">
+                <h3>✨ Player Performance Analysis ✨</h3>
+                <p class="mb-4 text-gray-700">Describe player performance in a specific situation for analysis.</p>
+                <label for="player-performance-input" class="block text-gray-700 text-sm font-bold mb-2">Performance Description:</label>
+                <textarea id="player-performance-input" placeholder="Example: Midfielder intercepts balls well but makes long passing errors, striker moves a lot but lacks finishing." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4"></textarea>
+                
+                <button id="analyze-player-performance-btn">Analyze Performance ✨</button>
+                <div id="player-performance-loading-indicator" class="loading-indicator hidden">Analyzing...</div>
+                <div id="player-performance-response" class="llm-response hidden"></div>
+                <button id="translate-performance-btn" class="translate-button hidden">Translate this Response</button>
+                <div id="translated-performance-response" class="translated-response hidden"></div>
+            </div>
+
+            <div class="llm-feature-section mt-8">
+                <h3>✨ Football Quiz Question Generator ✨</h3>
+                <p class="mb-4 text-gray-700">Enter a topic to generate quiz questions.</p>
+                <label for="quiz-topic-input" class="block text-gray-700 text-sm font-bold mb-2">Quiz Topic:</label>
+                <input type="text" id="quiz-topic-input" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4" placeholder="Example: World Cup history, Laws of the Game, Defensive tactics.">
+                
+                <button id="generate-quiz-btn">Generate Questions ✨</button>
+                <div id="quiz-loading-indicator" class="loading-indicator hidden">Generating...</div>
+                <div id="quiz-response" class="llm-response hidden"></div>
+                <button id="translate-quiz-btn" class="translate-button hidden">Translate this Response</button>
+                <div id="translated-quiz-response" class="translated-response hidden"></div>
+            </div>
+
+
+            <h2 id="section4">4. Conclusion:</h2>
+            <p>We hope this digital book serves as a useful starting point in your journey to develop your football skills. Remember that consistency in training, learning from mistakes, and passion for the game are the essential factors for achieving your goals. Do not hesitate to seek additional sources of knowledge and training, and most importantly, enjoy every moment you spend playing this wonderful sport.</p>
+            <p class="text-center text-xl font-bold mt-8">We wish you all the best in your football career!</p>
+        </div>
+    </div>
+
+    <script>
+        let currentLanguage = 'ar'; // Default language
+
+        // Function to call Gemini API for general content generation
+        async function callGeminiAPI(prompt, outputElementId, loadingIndicatorId, buttonId, translateButtonId) {
+            const outputElement = document.getElementById(outputElementId);
+            const loadingIndicator = document.getElementById(loadingIndicatorId);
+            const button = document.getElementById(buttonId);
+            const translateButton = document.getElementById(translateButtonId);
+            const translatedResponseElement = document.getElementById('translated-' + outputElementId.replace('-response', '-response')); 
+
+            outputElement.classList.add('hidden');
+            if (translatedResponseElement) translatedResponseElement.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            button.disabled = true;
+            if (translateButton) translateButton.classList.add('hidden');
+
+
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates[0]?.content?.parts?.[0]?.text) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputElement.innerText = text;
+                    if (translateButton) translateButton.classList.remove('hidden'); 
+                } else {
+                    outputElement.innerText = 'عذرًا، لم أتمكن من توليد استجابة. يرجى المحاولة مرة أخرى.';
+                    console.error('Gemini API response structure unexpected:', result);
+                }
+            } catch (error) {
+                outputElement.innerText = 'حدث خطأ أثناء الاتصال بالنموذج. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.';
+                console.error('Error calling Gemini API:', error);
+            } finally {
+                loadingIndicator.classList.add('hidden');
+                outputElement.classList.remove('hidden');
+                button.disabled = false;
+            }
+        }
+
+        // Function to call Gemini API for translation
+        async function translateTextViaGemini(textToTranslate, targetLanguage, translatedOutputElementId, translateButtonId) {
+            const translatedOutputElement = document.getElementById(translatedOutputElementId);
+            const translateButton = document.getElementById(translateButtonId);
+            
+            if (!textToTranslate || textToTranslate.trim() === "") {
+                 translatedOutputElement.innerText = "لا يوجد نص لترجمته.";
+                 translatedOutputElement.classList.remove('hidden');
+                 return;
+            }
+
+            translatedOutputElement.classList.add('hidden');
+            translateButton.disabled = true;
+            translateButton.innerText = "جاري الترجمة...";
+
+
+            const prompt = `Translate the following Arabic text to ${targetLanguage}: "${textToTranslate}"`;
+            try {
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory };
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates[0]?.content?.parts?.[0]?.text) {
+                    translatedOutputElement.innerText = `Translation to (${targetLanguage}):\n${result.candidates[0].content.parts[0].text}`;
+                } else {
+                    translatedOutputElement.innerText = 'Sorry, could not translate the text.';
+                }
+            } catch (error) {
+                translatedOutputElement.innerText = 'An error occurred during translation.';
+                console.error('Error translating text:', error);
+            } finally {
+                translatedOutputElement.classList.remove('hidden');
+                translateButton.disabled = false;
+                translateButton.innerText = "Translate this Response";
+            }
+        }
+        
+        function setupLLMFeature(buttonId, inputIds, promptTemplate, outputId, loadingId, translateButtonId, translatedOutputId) {
+            document.getElementById(buttonId).addEventListener('click', () => {
+                let prompt = promptTemplate;
+                if (typeof inputIds === 'string') {
+                    const inputValue = document.getElementById(inputIds).value;
+                    prompt = promptTemplate.replace('{input}', inputValue);
+                } else { 
+                    inputIds.forEach((id, index) => {
+                        const inputValue = document.getElementById(id).value;
+                        prompt = prompt.replace(`{input${index+1}}`, inputValue);
+                    });
+                }
+                callGeminiAPI(prompt, outputId, loadingId, buttonId, translateButtonId);
+            });
+
+            // Check if translateButtonId element exists before adding event listener
+            const translateButton = document.getElementById(translateButtonId);
+            if (translateButton) {
+                translateButton.addEventListener('click', () => {
+                    const originalText = document.getElementById(outputId).innerText;
+                    const targetLanguage = document.getElementById('language-select').value;
+                    translateTextViaGemini(originalText, targetLanguage, translatedOutputId, translateButtonId);
+                });
+            } else {
+                console.warn(`Translate button with ID '${translateButtonId}' not found. Skipping event listener setup.`);
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            setupLLMFeature(
+                'generate-plan-btn',
+                ['player-position', 'player-strengths', 'player-weaknesses', 'training-goal'],
+                'بصفتك مدرب كرة قدم خبير، قم بإنشاء خطة تدريب شخصية للاعب كرة قدم بناءً على المعلومات التالية: مركز اللاعب: {input1}، نقاط القوة: {input2}، نقاط الضعف: {input3}، الهدف: {input4}. يجب أن تتضمن الخطة تمارين محددة، نصائح للتحسين، وجدول زمني مقترح (على سبيل المثال، 3 أيام في الأسبوع). اجعل الخطة عملية ومفصلة.',
+                'personal-plan-response',
+                'plan-loading-indicator',
+                'translate-plan-btn',
+                'translated-plan-response'
+            );
+
+            setupLLMFeature(
+                'analyze-tactic-btn',
+                'tactical-scenario',
+                'بصفتك محلل تكتيكي لكرة قدم، قم بتحليل الموقف التالي واقترح حلولاً تكتيكية أو تحركات للاعبين: {input}. قدم نصائح عملية وموجزة.',
+                'tactical-analysis-response',
+                'tactic-loading-indicator',
+                'translate-tactic-btn',
+                'translated-tactic-response'
+            );
+            
+            setupLLMFeature(
+                'get-injury-advice-btn',
+                'injury-description',
+                'بصفتك أخصائي إصابات رياضية، قدم نصائح للوقاية من الإصابات والتعافي بناءً على الوصف التالي: {input}. ركز على الخطوات الأولية للتعامل مع الإصابة والوقاية من تفاقمها.',
+                'injury-advice-response',
+                'injury-loading-indicator',
+                'translate-injury-btn',
+                'translated-injury-response'
+            );
+
+            setupLLMFeature(
+                'generate-motivation-btn',
+                'match-details',
+                'بصفتك مدرب كرة قدم، قم بتوليد خطاب تحفيزي قصير ومؤثر قبل المباراة بناءً على التفاصيل التالية: {input}. يجب أن يكون الخطاب مشجعاً ويرفع من معنويات الفريق.',
+                'motivation-speech-response',
+                'motivation-loading-indicator',
+                'translate-motivation-btn',
+                'translated-motivation-response'
+            );
+
+            setupLLMFeature(
+                'get-alternative-exercise-btn',
+                'alternative-exercise-input',
+                'بصفتك مدرب لياقة بدنية لكرة القدم، اقترح 3-5 تمارين بديلة للتمرين أو العضلة التالية: {input}. اذكر الفوائد الرئيسية لكل تمرين بديل.',
+                'alternative-exercise-response',
+                'alternative-exercise-loading-indicator',
+                'translate-alt-exercise-btn',
+                'translated-alt-exercise-response'
+            );
+
+            setupLLMFeature(
+                'analyze-player-performance-btn',
+                'player-performance-input',
+                'بصفتك محلل أداء كرة قدم، قم بتحليل أداء اللاعب بناءً على الوصف التالي: "{input}". قدم نقاطاً للتحسين ونصائح عملية.',
+                'player-performance-response',
+                'player-performance-loading-indicator',
+                'translate-performance-btn',
+                'translated-performance-response'
+            );
+
+            setupLLMFeature(
+                'generate-quiz-btn',
+                'quiz-topic-input',
+                'بصفتك خبير في كرة القدم، قم بتوليد 3 أسئلة اختبار (مع خيارات متعددة وإجابة صحيحة) حول الموضوع التالي: {input}. اجعل الأسئلة متنوعة ومثيرة للاهتمام.',
+                'quiz-response',
+                'quiz-loading-indicator',
+                'translate-quiz-btn',
+                'translated-quiz-response'
+            );
+
+            // Global language toggle logic
+            document.getElementById('toggle-book-language-btn').addEventListener('click', () => {
+                const arabicContent = document.getElementById('arabic-book-content');
+                const englishContent = document.getElementById('english-book-content');
+                const languageText = document.getElementById('current-language-text');
+
+                if (currentLanguage === 'ar') {
+                    arabicContent.classList.add('hidden');
+                    englishContent.classList.remove('hidden');
+                    languageText.innerText = 'Switch to Arabic';
+                    currentLanguage = 'en';
+                } else {
+                    arabicContent.classList.remove('hidden');
+                    englishContent.classList.add('hidden');
+                    languageText.innerText = 'تبديل إلى الإنجليزية';
+                    currentLanguage = 'ar';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
